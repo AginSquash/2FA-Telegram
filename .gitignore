@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Encrypted data
+codes.json
+*.enc
+*.OLD
+
+# My files
+test.py
+config.py
+*.json
