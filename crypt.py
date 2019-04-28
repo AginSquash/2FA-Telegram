@@ -6,6 +6,9 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 def generatePassword(password):
+    '''
+    Generate Fernet-key with your string password
+    '''
     password = password.encode()
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
@@ -19,14 +22,18 @@ def generatePassword(password):
     return f
 
 def encrypt(fer, text):
+    '''
+    Encrypt your string
+    '''
     token = fer.encrypt( text.encode() )
     return token
 
 def decrypt(fer, text):
+    '''
+    Decrypt your string
+    '''
     token = fer.decrypt( text.encode() )
     return token
-
-#fer = Fernet(key)
 
 def OpenFile(file, fer):
     with open(file, 'rb') as f:
@@ -37,14 +44,3 @@ def WriteFile(file, encryptedTest):
     with open(file, 'wb') as f:
         f.write( encryptedTest )
 
-key = generatePassword("oooouumaaay")
-data = encrypt(key, '{"abs": "12" }')
-#WriteFile(data)
-#dec = OpenFile(key)
-#print(dec)
-#j = json.loads( dec )
-#print(j["abs"])
-#text = encrypt("Keks", "Luklz").decode()
-#enc = decrypt("Keks", text)
-
-#print(str(enc.decode()))

@@ -12,6 +12,9 @@ import config
 import FileWork as fw
 
 class password():
+    '''
+    Your password store
+    '''
     def __init__(self):
         self.password = None
 
@@ -60,7 +63,7 @@ def getCodes(checkName= None):
 
 def addCodes(name, secure_code):
     '''
-    Add codes to codes.json
+    Add codes to codes.enc
     '''
     if pwd.getPass() != None:
         try:
@@ -125,7 +128,7 @@ def parseMsg(msg):
 
 def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
-    #print("Chat id: %s" % str(chat_id) )
+    print("Chat id: %s" % str(chat_id) )
     if chat_id == config.admin_id:
         parseMsg(msg['text'])
 
