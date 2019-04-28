@@ -24,7 +24,7 @@ Now place this id to the config file. As a result, the file should look like thi
     admin_id = 98765432
 
 ## Usage
-#### 1. /pass
+#### 1. Setting 2FA key-store password
 **/pass** - This command sets a password to the repository.
 
 Using like 
@@ -38,14 +38,14 @@ It's help you to secure store your 2FA-keys.
 
 **Attention! Every time before use `/add` and `/get` you need send password from key-store to bot**
 
-#### 2. /add
+#### 2. Adding service
 **/add** - This command add service to the repository.
 > /add [service_name] [key]
 
 For example:
 > /add PyOTP_Test JBSWY3DPEHPK3PXP
 
-#### 3. /get
+#### 3. Get 2FA codes
 **/get** - This command return 2FA-code to the repository.
 > /get [service_name]
 
