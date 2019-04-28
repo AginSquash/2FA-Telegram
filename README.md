@@ -36,7 +36,7 @@ I recommend resetting the password variable after using the bot:
 You need to re-enter the password for the next use after this command.
 It's help you to secure store your 2FA-keys.
 
-**Attention! Every time before use `/add` and `/get` you need send password from key-store to bot**
+**Attention! Before use `/add` and `/get` you need set password for key-store**
 
 #### 2. Adding service
 **/add** - This command add service to the repository.
