@@ -54,8 +54,8 @@ For example:
 Example:
 > /get PyOTP_Test
 
-#### 4. Delete
-For security reasons, you can not remove the service through the bot (this is a feature). To delete (or receive data without telegram bot) use `CodesEditor.py` local.
+#### 4. Delete or change password
+For security reasons, you can not remove the service through the bot (this is a feature). To delete (or receive data without telegram bot, or change local key-store password) use `CodesEditor.py` local.
 
 >python3 `CodesEditor.py`
 
