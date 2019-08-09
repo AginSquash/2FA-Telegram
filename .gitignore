@@ -13,3 +13,4 @@ codes.json
 test.py
 config.py
 *.json
+.DS_Store
