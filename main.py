@@ -29,7 +29,7 @@ def getTime():
     if time_last>=30:
             time_last = time_last - 30
     time_last = 30 - time_last
-    return ("(You have %s seconds left)\n" % str(time_last))
+    return ("(You have %s seconds left) " % str(time_last))
 
 def NullPass():
     pwd.setPass(None)
@@ -62,8 +62,8 @@ def getCodes(checkName= None):
                     botSendAdmin(getTime + code +  " token is:")
                     botSendAdmin( generateCodes( codes[code] ) )
                     time.sleep(1)
-        except:
-            botSendAdmin("List of 2FA doesn't exist")
+        except Exception as e:
+            botSendAdmin("List of 2FA doesn't exist " + str(e))
             return None
     else:
         botSendAdmin("Password Null")
