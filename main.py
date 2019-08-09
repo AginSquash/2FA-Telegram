@@ -59,7 +59,7 @@ def getCodes(checkName= None):
                 if checkName==code:
                     return generateCodes( codes[code] )
                 if checkName == None:
-                    botSendAdmin(getTime + "%s token is:" % code)
+                    botSendAdmin(getTime + code +  " token is:")
                     botSendAdmin( generateCodes( codes[code] ) )
                     time.sleep(1)
         except:
@@ -119,7 +119,7 @@ def parseMsg(msg):
                 elif command[0] == "/get":
                     code = getCodes(checkName= command [1])
                     if code != None:
-                        botSendAdmin(getTime + "%s token is" % command[1] )
+                        botSendAdmin(getTime + command[1] + " token is" )
                         botSendAdmin( getCodes(checkName= command [1]) )
                     else:
                         botSendAdmin("There is no service with this name.")
