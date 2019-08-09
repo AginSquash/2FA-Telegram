@@ -7,7 +7,7 @@ import pyotp
 import telepot
 from telepot.loop import MessageLoop
 
-#Congig
+#Config
 import config
 import FileWork as fw
 
@@ -23,6 +23,13 @@ class password():
 
     def getPass(self):
         return self.password
+
+def getTime():
+    time_last = int(time.strftime("%S"))
+    if time_last>=30:
+            time_last = time_last - 30
+    time_last = 30 - time_last
+    return ("(You have %s seconds left)\n" % str(time_last))
 
 def NullPass():
     pwd.setPass(None)
@@ -52,7 +59,7 @@ def getCodes(checkName= None):
                 if checkName==code:
                     return generateCodes( codes[code] )
                 if checkName == None:
-                    botSendAdmin("%s token is:" % code)
+                    botSendAdmin(getTime + "%s token is:" % code)
                     botSendAdmin( generateCodes( codes[code] ) )
                     time.sleep(1)
         except:
@@ -112,7 +119,7 @@ def parseMsg(msg):
                 elif command[0] == "/get":
                     code = getCodes(checkName= command [1])
                     if code != None:
-                        botSendAdmin("%s token is:" % command[1])
+                        botSendAdmin(getTime + "%s token is" % command[1] )
                         botSendAdmin( getCodes(checkName= command [1]) )
                     else:
                         botSendAdmin("There is no service with this name.")
