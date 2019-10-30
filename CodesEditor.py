@@ -10,6 +10,13 @@ import crypt
 import FileWork as fw
 
 ### My fucntions here starts
+def getTime():
+    time_last = int(time.strftime("%S"))
+    if time_last>=30:
+            time_last = time_last - 30
+    time_last = 30 - time_last
+    return ("(You have %s seconds left) " % str(time_last))
+
 def help():
     teer()
     print("1 - add\n2 - del\n3 - change\n4 - get\n\n9 - exit")
@@ -62,6 +69,7 @@ def get(codes):
     if service_name in codes:
         secure_code = codes[service_name]
         totp = pyotp.TOTP(secure_code)
+        print( getTime() )
         print(service_name + ": " + totp.now())
     teer()
 
